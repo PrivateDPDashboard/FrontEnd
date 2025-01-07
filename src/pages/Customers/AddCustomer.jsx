@@ -27,7 +27,6 @@ function AddCustomer() {
     expiryDate: "",
     notes: "",
     image: null,
-    termsAccepted: false,
   });
 
   const handleChange = (e) => {
@@ -44,10 +43,6 @@ function AddCustomer() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!formData.termsAccepted) {
-      alert("Please accept the terms and conditions to proceed.");
-      return;
-    }
     console.log("Form Data Submitted:", formData);
     // Perform further actions, e.g., sending data to an API
   };
@@ -229,15 +224,6 @@ function AddCustomer() {
               rows={5}
               size="lg"
               className="w-full"
-            />
-
-            {/* Terms and Conditions */}
-            <Checkbox
-              label="I accept the terms and conditions"
-              name="termsAccepted"
-              checked={formData.termsAccepted}
-              onChange={handleChange}
-              required
             />
 
             {/* Submit Button */}
